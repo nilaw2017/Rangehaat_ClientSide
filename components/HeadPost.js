@@ -1,4 +1,4 @@
-import style from "./../styles/HeadPost.module.scss";
+import style from "./../styles/HeadPost.module.css";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import Link from "next/link";
@@ -46,15 +46,15 @@ const HeadPost = () => {
     const joinedParagraph2 = joinedParagraph.replace(/,/g, " ");
     return joinedParagraph2;
   };
-  const categoryName = (category) => {
-    const formattedCategory =
-      category == null ? (
-        <span className="me-2 category">Others</span>
-      ) : (
-        <span className="me-2 category">{category.name}</span>
-      );
-    return formattedCategory;
-  };
+  // const categoryName = (category) => {
+  //   const formattedCategory =
+  //     category == null ? (
+  //       <span className="me-2 category">Others</span>
+  //     ) : (
+  //       <span className="me-2 category">{category.name}</span>
+  //     );
+  //   return formattedCategory;
+  // };
   const headNews =
     news.length === 0 ? (
       <p>LOADING</p>
