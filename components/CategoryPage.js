@@ -54,12 +54,13 @@ export default function CategoryPage({ query }) {
   ) : (
     <section className="mt-5">
       {category.articles.map(
-        ({ id, slug, name, author, created_at, title, content, image }) => (
+        ({ id, slug, author, created_at, title, content, image }) => (
           <div
             className="row flex-row w-100 col-12 col-lg-4 card mb-5 p-2"
             key={id}
           >
-            <div className="col-9 card-body">
+            {/* Body Section */}
+            <div className="col-9 card-body order-lg-1 order-2">
               <h5 className="card-title">{title}</h5>
               <p className="card-text new-line">
                 {subContent(content) + " ...."}
@@ -80,7 +81,9 @@ export default function CategoryPage({ query }) {
                 <a className="btn btn-primary">Read More</a>
               </Link>
             </div>
-            <div className="headPostImage col-3">
+
+            {/* Image Section */}
+            <div className="headPostImage col-12 col-lg-3 order-lg-2 order-1">
               <span className="position-absolute z-1">
                 {<span className="me-1 category">{category.name}</span>}
               </span>

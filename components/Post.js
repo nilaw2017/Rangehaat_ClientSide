@@ -1,5 +1,6 @@
 import ShareIt from "./ShareIt";
 import SideBar from "./SideBar";
+import Image from "next/image";
 
 export default function Post({ query }) {
   const formattedContent = (params) => {
@@ -12,6 +13,14 @@ export default function Post({ query }) {
       // const myString = someHTMLString.replace(/<iframe/g, "${<iFrame");
       // return myString;
       return someHTMLString;
+    }
+  };
+
+  const imageLoading = () => {
+    if (query.image == undefined) {
+      return <h1>LOADING</h1>;
+    } else {
+      return `http://localhost:1337${query.image}`;
     }
   };
   return (
@@ -29,11 +38,19 @@ export default function Post({ query }) {
               {query.created_at}
             </span>
           </div>
-          <img
+          {/* <img
             src={`http://localhost:1337${query.image}`}
             className="border img-fluid mb-5"
             alt="test"
+          /> */}
+          <Image
+            src={imageLoading()}
+            layout="responsive"
+            width={10}
+            height={7}
+            alt="test"
           />
+          {console.log(query.image)}
           <p className="new-line">{formattedContent(query.content)}</p>
         </div>
         <div className="col-lg-4 col-12 p-2 border">

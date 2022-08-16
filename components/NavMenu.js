@@ -115,11 +115,11 @@ const NavMenu = () => {
     <nav className={style.navContainer + " bg-light"}>
       <div className="text-center">
         <Image
-          src="/logo.jpg"
+          src="/logo.png"
           layout="intrinsic"
           // className="border"
           width={50}
-          height={90}
+          height={50}
           priority
           alt="test"
         />
@@ -155,7 +155,7 @@ const NavMenu = () => {
           >
             <Link href="/business">
               <a className="d-lg-flex d-block align-items-center">
-                <i class="fa-solid fa-briefcase fa-lg ms-2 me-2 "></i>
+                <i className="fa-solid fa-briefcase fa-lg ms-2 me-2 "></i>
                 <b className=" d-lg-block d-none">Business</b>
               </a>
             </Link>
@@ -167,7 +167,7 @@ const NavMenu = () => {
           >
             <Link href="/national">
               <a className="d-lg-flex d-block align-items-center">
-                <i class="fa-solid fa-landmark fa-lg ms-2 me-2 "></i>
+                <i className="fa-solid fa-landmark fa-lg ms-2 me-2 "></i>
                 <b className=" d-lg-block d-none">National</b>
               </a>
             </Link>
@@ -179,7 +179,7 @@ const NavMenu = () => {
           >
             <Link href="/about">
               <a className="d-lg-flex d-block align-items-center">
-                <i class="fa-solid fa-exclamation fa-lg ms-2 me-2 "></i>
+                <i className="fa-solid fa-exclamation fa-lg ms-2 me-2 "></i>
                 <b className=" d-lg-block d-none">About</b>
               </a>
             </Link>
@@ -191,7 +191,7 @@ const NavMenu = () => {
           >
             <Link href="/contact">
               <a className="d-lg-flex d-block align-items-center">
-                <i class="fa-solid fa-phone fa-lg ms-2 me-2 "></i>
+                <i className="fa-solid fa-phone fa-lg ms-2 me-2 "></i>
                 <b className=" d-lg-block d-none">Contact</b>
               </a>
             </Link>
