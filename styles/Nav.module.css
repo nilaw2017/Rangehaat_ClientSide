@@ -1,0 +1,56 @@
+/* // .nav {
+//     // height: 50px;
+//     background-color: #343334;
+//     color: #fff;
+//     // display: grid;
+//     // grid-template-columns: auto auto auto auto auto;
+//     // column-gap: 10px;
+//     // justify-content: center;
+//     // align-content: center;
+//     transition: 1s;
+
+//     ul{
+//         padding: 10px;
+
+//         li {       
+//             a {
+//                 padding:10px;
+//                 transition: 1s;
+               
+//             }
+//             :hover {
+//                 background-color: grey;
+//                 color: #fff;
+//                 transition: 1s;
+
+//                 i{
+//                     transform: rotate(90deg);
+//                 transition: 1s;
+                    
+//                 }
+//             }
+//             :active {
+//                 background-color: #fff;
+//             }
+//         }
+//     }
+// }
+
+// .dropdown {
+//     .ulDropdown{
+//         position: absolute;
+//         top: 100%;
+//         right: 0;
+//         height: 0;
+//         // overflow: hidden;
+//         list-style: none;
+//         :hover {
+//             height: 100%;
+//             overflow: visible;
+//                 display: block;
+//         }
+//     }
+    
+// } */
+
+

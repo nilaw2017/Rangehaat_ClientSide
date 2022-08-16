@@ -1,0 +1,32 @@
+.mcarousel{
+    :global .carousel{
+        min-height: 50px;
+        border: #000 solid 3px;
+        .control-arrow {
+            opacity: 100;
+            background-color: rgb(196, 194, 194);
+        }
+        .carousel-status {
+            color: #000;
+            z-index: 100;
+            right: 50px;
+        }
+    }
+}
+
+.slide {
+    text-align: start;
+    font-size: 1rem;
+    font-weight: bold;
+    word-wrap: break-word;
+    padding: 5px 40px 25px 40px;
+    :global .category {
+        width: auto!important;
+        padding: 5px;
+        background-color: #fc3838;
+        color: #fff;
+    }
+}
+.highlights {
+    font-size: 1.7rem;
+}
