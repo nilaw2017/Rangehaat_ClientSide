@@ -10,23 +10,3 @@
 }
 
 
-
-.imageContainer {
-    position: relative;
-    
-}
-.imageContainer::before {
-    content: '';
-    width: 0;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 99;
-    opacity: .5;
-    transition: .5s;
-}
-
-.imageContainer:hover::before {
-    transform: scale(2);
-}

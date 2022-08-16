@@ -112,78 +112,89 @@ const NavMenu = () => {
     //     </div>
     //   </div>
     // </nav>
-    <nav className={style.navContainer}>
-      <div>
+    <nav className={style.navContainer + " bg-light"}>
+      <div className="text-center">
+        <Image
+          src="/logo.jpg"
+          layout="intrinsic"
+          // className="border"
+          width={50}
+          height={90}
+          priority
+          alt="test"
+        />
         <ul className={style.ulContainer}>
           <li
-            className="nav-item mt-2 mb-2 col"
+            className="nav-item mt-5 mb-5 col"
             role="tab"
             aria-selected="false"
           >
-            <Link href="/">Home</Link>
+            <Link href="/">
+              <a className="d-lg-flex d-block align-items-center">
+                <i className="fa-solid fa-house fa-lg ms-2 me-2 "></i>
+                <b className=" d-lg-block d-none">Home</b>
+              </a>
+            </Link>
           </li>
           <li
-            className="nav-item mt-2 mb-2 col"
+            className="nav-item mt-5 mb-5 col"
             role="tab"
             aria-selected="false"
           >
-            <Link href="/technology">Technology</Link>
+            <Link href="/technology">
+              <a className="d-lg-flex d-block justify-content-center align-items-center">
+                <i className="fa-solid fa-display fa-lg ms-2 me-2 "></i>
+                <b className=" d-lg-block d-none">Technology</b>
+              </a>
+            </Link>
           </li>
           <li
-            className="nav-item mt-2 mb-2 col"
+            className="nav-item mt-5 mb-5 col"
             role="tab"
             aria-selected="false"
           >
-            <Link href="/business">Business</Link>
+            <Link href="/business">
+              <a className="d-lg-flex d-block align-items-center">
+                <i class="fa-solid fa-briefcase fa-lg ms-2 me-2 "></i>
+                <b className=" d-lg-block d-none">Business</b>
+              </a>
+            </Link>
           </li>
           <li
-            className="nav-item mt-2 mb-2 col"
+            className="nav-item mt-5 mb-5 col"
             role="tab"
             aria-selected="false"
           >
-            <Link href="/national">National</Link>
+            <Link href="/national">
+              <a className="d-lg-flex d-block align-items-center">
+                <i class="fa-solid fa-landmark fa-lg ms-2 me-2 "></i>
+                <b className=" d-lg-block d-none">National</b>
+              </a>
+            </Link>
           </li>
           <li
-            className="nav-item mt-2 mb-2 col"
+            className="nav-item mt-5 mb-5 col"
             role="tab"
             aria-selected="false"
           >
-            <Link href="/about">About</Link>
+            <Link href="/about">
+              <a className="d-lg-flex d-block align-items-center">
+                <i class="fa-solid fa-exclamation fa-lg ms-2 me-2 "></i>
+                <b className=" d-lg-block d-none">About</b>
+              </a>
+            </Link>
           </li>
           <li
-            className="nav-item mt-2 mb-2 col"
+            className="nav-item mt-5 mb-5 col"
             role="tab"
             aria-selected="false"
           >
-            <Link href="/contact">Contact</Link>
-          </li>
-          <li
-            className="nav-item mt-2 mb-2 col"
-            role="tab"
-            aria-selected="false"
-          >
-            <a className={style.dropdown + " position-relative"}>
-              Category{" "}
-              <i className="fa-solid fa-angle-right categoryDropdown"></i>
-              <div className={style.navCategory}>
-                <ul className={style.ulDropdown + " text-dark"}>
-                  <li
-                    className={style.liDropdown + " nav-item mt-2 mb-2 col"}
-                    role="tab"
-                    aria-selected="false"
-                  >
-                    Food
-                  </li>
-                  <li
-                    className={style.liDropdown + " nav-item mt-2 mb-2 col"}
-                    role="tab"
-                    aria-selected="false"
-                  >
-                    Politics
-                  </li>
-                </ul>
-              </div>
-            </a>
+            <Link href="/contact">
+              <a className="d-lg-flex d-block align-items-center">
+                <i class="fa-solid fa-phone fa-lg ms-2 me-2 "></i>
+                <b className=" d-lg-block d-none">Contact</b>
+              </a>
+            </Link>
           </li>
         </ul>
       </div>
