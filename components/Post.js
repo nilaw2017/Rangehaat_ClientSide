@@ -3,6 +3,7 @@ import SideBar from "./SideBar";
 import Image from "next/image";
 
 export default function Post({ query }) {
+  console.log(query);
   const formattedContent = (params) => {
     if (params == undefined) {
       return 0;

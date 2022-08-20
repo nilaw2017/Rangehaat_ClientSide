@@ -115,14 +115,15 @@ const NavMenu = () => {
     <nav className={style.navContainer + " bg-light"}>
       <div className="text-center">
         <Image
-          src="/logo.png"
-          layout="intrinsic"
+          src="/RH_logo300x300.png"
+          layout="responsive"
           // className="border"
-          width={50}
-          height={50}
+          width={400}
+          height={400}
           priority
           alt="test"
         />
+        {/* <img src="./RH_logo300x300.png" /> */}
         <ul className={style.ulContainer}>
           <li
             className="nav-item mt-5 mb-5 col"

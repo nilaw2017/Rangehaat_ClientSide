@@ -4,7 +4,7 @@ import Posts from "../components/Posts";
 import SideBar from "../components/SideBar";
 export default function Home() {
   return (
-    <>
+    <main>
       <div className="row mt-5 mb-5">
         <div className="col-lg-8 col-12">
           <HeadPost />
@@ -15,12 +15,6 @@ export default function Home() {
       </div>
       <hr />
       <Posts />
-    </>
+    </main>
   );
 }
-// export async function getStaticProps() {
-//   const db = await myDB.connect({
-//     host: process.env.DB_HOST,
-//     username: process.env.DB_USER,
-//     password: process.env.DB_PASS,
-//   })

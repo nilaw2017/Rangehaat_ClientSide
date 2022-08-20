@@ -9,7 +9,8 @@ const HeadPost = () => {
   //   debugger;
   const fetchData = async () => {
     setLoading(true);
-    const res = await fetch(process.env.API_HOST_URL + "articles");
+    // const res = await fetch(process.env.API_HOST_URL + "articles");
+    const res = await fetch(process.env.HEROKU_HOST_URL + "articles");
     const data = await res.json();
     setNews(data);
     setLoading(false);
@@ -21,7 +22,6 @@ const HeadPost = () => {
   if (loading) {
     return <p>Data is loading...</p>;
   }
-  // console.log(news);
   const convertedDate = () => {
     const dateAndTime = news[news.length - 1].created_at;
 
@@ -55,6 +55,7 @@ const HeadPost = () => {
   //     );
   //   return formattedCategory;
   // };
+
   const headNews =
     news.length === 0 ? (
       <p>LOADING</p>
@@ -68,7 +69,7 @@ const HeadPost = () => {
           </span>
           <div className="imageContainer">
             <Image
-              src={`http://localhost:1337${news[news.length - 1].image.url}`}
+              src={news[news.length - 1].image.url}
               layout="responsive"
               className="border"
               width={10}

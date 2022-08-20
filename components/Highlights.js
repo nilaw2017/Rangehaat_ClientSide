@@ -11,7 +11,7 @@ const Highlights = () => {
 
   const fetchData = async () => {
     setLoading(true);
-    await fetch(process.env.API_HOST_URL + "highlights")
+    await fetch(process.env.HEROKU_HOST_URL + "highlights")
       .then((res) => {
         if (res.status >= 400) {
           console.log("Something Went Wrong");

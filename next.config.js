@@ -4,10 +4,12 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ["localhost"],
+    domains: ["localhost", "res.cloudinary.com"],
   },
   env: {
-    API_HOST_URL: "http://localhost:1337/",
+    LOCALHOST_URL: "http://localhost:1337/",
+    HEROKU_HOST_URL: "https://rangehaatserver.herokuapp.com/",
+    // CLOUDINARY_IMAGE: "res.cloudinary.com",
   },
 };
 

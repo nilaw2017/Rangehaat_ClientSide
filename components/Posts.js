@@ -6,7 +6,8 @@ const Posts = () => {
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     const fetchData = async () => {
-      await fetch(process.env.API_HOST_URL + "articles")
+      await fetch(process.env.HEROKU_HOST_URL + "articles")
+        // await fetch("https://rangehaatserver.herokuapp.com/articles")
         .then((res) => res.json())
         .then((data) => {
           setNews(data);
@@ -58,7 +59,7 @@ const Posts = () => {
               </span>
               <div className="imageContainer">
                 <Image
-                  src={`http://localhost:1337${image.url}`}
+                  src={image.url}
                   layout="responsive"
                   width={10}
                   height={7}
