@@ -178,7 +178,7 @@ const NavMenu = () => {
             role="tab"
             aria-selected="false"
           >
-            <Link href="/internationa">
+            <Link href="/international">
               <a className="d-lg-flex d-block align-items-center">
                 <i className="fa-solid fa-earth-africa fa-lg ms-2 me-2 "></i>
                 <b className=" d-lg-block d-none">International</b>
