@@ -52,7 +52,7 @@ export default function Post({ query }) {
             alt="test"
           />
           {console.log(query.image)}
-          <p className="new-line">{formattedContent(query.content)}</p>
+          <p className="new-line mt-5">{formattedContent(query.content)}</p>
         </div>
         <div className="col-lg-4 col-12 p-2 border">
           <SideBar />
