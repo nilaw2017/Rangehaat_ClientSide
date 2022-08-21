@@ -21,7 +21,7 @@ export default function Post({ query }) {
     if (query.image == undefined) {
       return <h1>LOADING</h1>;
     } else {
-      return `http://localhost:1337${query.image}`;
+      return `${query.image}`;
     }
   };
   return (

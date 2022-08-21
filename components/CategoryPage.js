@@ -11,7 +11,7 @@ export default function CategoryPage({ query }) {
 
     // setLoading(true);
     const fetchData = async () => {
-      await fetch(process.env.API_HOST_URL + "categories" + query)
+      await fetch(process.env.HEROKU_HOST_URL + "categories" + query)
         .then((res) => res.json())
         .then((data) => {
           setCategory(data);
@@ -89,7 +89,7 @@ export default function CategoryPage({ query }) {
               </span>
               <div className="imageContainer">
                 <Image
-                  src={`http://localhost:1337${image.url}`}
+                  src={image.url}
                   layout="responsive"
                   width={10}
                   height={7}

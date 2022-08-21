@@ -1,0 +1,22 @@
+.cartContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.card {
+    background: #fff;
+    border: 1px solid #000;
+    border-radius: .25rem;
+    padding: .5rem;
+    transform: translateX(100px);
+    opacity: 0;
+    transition: .15s;
+}
+
+.show{
+    transform: translateX(0);
+    opacity: 1;
+}
+

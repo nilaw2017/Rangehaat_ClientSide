@@ -143,9 +143,9 @@ const NavMenu = () => {
             aria-selected="false"
           >
             <Link href="/technology">
-              <a className="d-lg-flex d-block justify-content-center align-items-center">
+              <a className="d-lg-flex d-block align-items-center">
                 <i className="fa-solid fa-display fa-lg ms-2 me-2 "></i>
-                <b className=" d-lg-block d-none">Technology</b>
+                <b className=" d-lg-block d-none">Techhnology</b>
               </a>
             </Link>
           </li>
@@ -170,6 +170,54 @@ const NavMenu = () => {
               <a className="d-lg-flex d-block align-items-center">
                 <i className="fa-solid fa-landmark fa-lg ms-2 me-2 "></i>
                 <b className=" d-lg-block d-none">National</b>
+              </a>
+            </Link>
+          </li>
+          <li
+            className="nav-item mt-5 mb-5 col"
+            role="tab"
+            aria-selected="false"
+          >
+            <Link href="/internationa">
+              <a className="d-lg-flex d-block align-items-center">
+                <i className="fa-solid fa-earth-africa fa-lg ms-2 me-2 "></i>
+                <b className=" d-lg-block d-none">International</b>
+              </a>
+            </Link>
+          </li>
+          <li
+            className="nav-item mt-5 mb-5 col"
+            role="tab"
+            aria-selected="false"
+          >
+            <Link href="/nature">
+              <a className="d-lg-flex d-block align-items-center">
+                <i className="fa-solid fa-leaf fa-lg ms-2 me-2 "></i>
+                <b className=" d-lg-block d-none">Nature</b>
+              </a>
+            </Link>
+          </li>
+          <li
+            className="nav-item mt-5 mb-5 col"
+            role="tab"
+            aria-selected="false"
+          >
+            <Link href="/notice">
+              <a className="d-lg-flex d-block align-items-center">
+                <i className="fa-solid fa-note-sticky fa-lg ms-2 me-2 "></i>
+                <b className=" d-lg-block d-none">Notice</b>
+              </a>
+            </Link>
+          </li>
+          <li
+            className="nav-item mt-5 mb-5 col"
+            role="tab"
+            aria-selected="false"
+          >
+            <Link href="/others">
+              <a className="d-lg-flex d-block align-items-center">
+                <i className="fa-solid fa-infinity fa-lg ms-2 me-2 "></i>
+                <b className=" d-lg-block d-none">Others</b>
               </a>
             </Link>
           </li>

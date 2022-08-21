@@ -1,4 +1,4 @@
-import style from "../styles/about.module.scss";
+import style from "../styles/about.module.css";
 
 const about = () => {
   // const cards = document.querySelectorAll(".card");
