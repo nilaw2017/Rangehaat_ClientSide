@@ -145,7 +145,7 @@ const NavMenu = () => {
             <Link href="/technology">
               <a className="d-lg-flex d-block align-items-center">
                 <i className="fa-solid fa-display fa-lg ms-2 me-2 "></i>
-                <b className=" d-lg-block d-none">Techhnology</b>
+                <b className=" d-lg-block d-none">Technology</b>
               </a>
             </Link>
           </li>

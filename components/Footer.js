@@ -16,7 +16,7 @@ const Footer = () => {
         <section>
           <div className="d-flex align-items-center">
             <h4>अध्यक्ष/संचालक :</h4>
-            <h5>पुनम पैडेल(२६२१३९)</h5>
+            <h5>पुनम पौडेल(२६२१३९)</h5>
           </div>
           <div className="d-flex align-items-center">
             <h4>प्राविधिक प्रमुख : </h4>
