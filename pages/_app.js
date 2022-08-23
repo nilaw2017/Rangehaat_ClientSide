@@ -9,7 +9,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>RangeHaat</title>
+        <title>RangeHaat - The New Way Towards Journalism </title>
       </Head>
       <Layout>
         <Component {...pageProps} />

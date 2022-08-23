@@ -66,12 +66,12 @@ const Posts = () => {
               </div>
             </div>
             <div>
-              <h6 className="blockquote-footer mt-2">
+              <p className="blockquote-footer mt-2">
                 <i className="fa-solid fa-user me-1"></i>
                 <span className="me-2">{author.name}</span>
                 <i className="fa-solid fa-calendar-days me-1"></i>
                 <span>{convertedDate(created_at)}</span>
-              </h6>
+              </p>
             </div>
             <div className="card-body">
               {/* POSTS TITLES */}

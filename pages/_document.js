@@ -8,22 +8,35 @@ export default function Document() {
           name="keywords"
           content="news, nepal, nepali, technology, corruption, daily_news"
         />
+        <meta
+          name="description"
+          content="Rangehaat - The New Way Of Journalism, Business news, National news, Nepal news, Technology news, Notices, Nature news, International news, China news, India news"
+        ></meta>
         <link
           rel="apple-touch-icon"
           sizes="180x180"
           href="/favicons/apple-touch-icon.png"
+          alt="apple-touch"
         />
         <link
           rel="icon"
           type="image/png"
           sizes="32x32"
           href="/favicons/favicon-32x32.png"
+          alt="favicon-32x32"
         />
         <link
           rel="icon"
           type="image/png"
           sizes="16x16"
           href="/favicons/favicon-16x16.png"
+          alt="favicon-16x16"
+        />
+        <link
+          rel="shortcut icon"
+          href="/favicons/favicon.ico"
+          type="image/x-icon"
+          alt="favicon"
         />
 
         {/* <link

@@ -43,7 +43,7 @@ const Highlights = () => {
     return formattedCategory;
   };
   return (
-    <div>
+    <div className="mt-5">
       <h3>Highlights</h3>
       <Carousel
         autoPlay="true"

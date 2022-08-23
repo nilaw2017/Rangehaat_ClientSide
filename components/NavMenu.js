@@ -16,13 +16,14 @@ const NavMenu = () => {
           priority
           alt="test"
         />
+        <h6>Rangehaat</h6>
         <ul className={style.ulContainer}>
           <li
             className="nav-item mt-3 mb-3 col text-dark"
             role="tab"
             aria-selected="false"
           >
-            <Link href="/">
+            <Link href="/" title="home">
               <a className="d-lg-flex d-block align-items-center">
                 <i className="fa-solid fa-house fa-lg ms-2 me-2 "></i>
                 <b className=" d-block">Home</b>
@@ -34,7 +35,7 @@ const NavMenu = () => {
             role="tab"
             aria-selected="false"
           >
-            <Link href="/technology">
+            <Link href="/technology" title="technology">
               <a className="d-lg-flex d-block align-items-center">
                 <i className="fa-solid fa-display fa-lg ms-2 me-2 "></i>
                 <b className=" d-block">Technology</b>
@@ -46,7 +47,7 @@ const NavMenu = () => {
             role="tab"
             aria-selected="false"
           >
-            <Link href="/business">
+            <Link href="/business" title="business">
               <a className="d-lg-flex d-block align-items-center">
                 <i className="fa-solid fa-briefcase fa-lg ms-2 me-2 "></i>
                 <b className=" d-block">Business</b>
@@ -58,7 +59,7 @@ const NavMenu = () => {
             role="tab"
             aria-selected="false"
           >
-            <Link href="/national">
+            <Link href="/national" title="national">
               <a className="d-lg-flex d-block align-items-center">
                 <i className="fa-solid fa-landmark fa-lg ms-2 me-2 "></i>
                 <b className=" d-block">National</b>
@@ -70,7 +71,7 @@ const NavMenu = () => {
             role="tab"
             aria-selected="false"
           >
-            <Link href="/international">
+            <Link href="/international" title="international">
               <a className="d-lg-flex d-block align-items-center">
                 <i className="fa-solid fa-earth-africa fa-lg ms-2 me-2 "></i>
                 <b className=" d-block">International</b>
@@ -82,7 +83,7 @@ const NavMenu = () => {
             role="tab"
             aria-selected="false"
           >
-            <Link href="/nature">
+            <Link href="/nature" title="nature">
               <a className="d-lg-flex d-block align-items-center">
                 <i className="fa-solid fa-leaf fa-lg ms-2 me-2 "></i>
                 <b className=" d-block">Nature</b>
@@ -94,7 +95,7 @@ const NavMenu = () => {
             role="tab"
             aria-selected="false"
           >
-            <Link href="/notice">
+            <Link href="/notice" title="notice">
               <a className="d-lg-flex d-block align-items-center">
                 <i className="fa-solid fa-note-sticky fa-lg ms-2 me-2 "></i>
                 <b className=" d-block">Notice</b>
@@ -106,7 +107,7 @@ const NavMenu = () => {
             role="tab"
             aria-selected="false"
           >
-            <Link href="/others">
+            <Link href="/others" title="others">
               <a className="d-lg-flex d-block align-items-center">
                 <i className="fa-solid fa-infinity fa-lg ms-2 me-2 "></i>
                 <b className=" d-block">Others</b>
@@ -118,7 +119,7 @@ const NavMenu = () => {
             role="tab"
             aria-selected="false"
           >
-            <Link href="/about">
+            <Link href="/about" title="about">
               <a className="d-lg-flex d-block align-items-center">
                 <i className="fa-solid fa-exclamation fa-lg ms-2 me-2 "></i>
                 <b className=" d-block">About</b>
@@ -130,7 +131,7 @@ const NavMenu = () => {
             role="tab"
             aria-selected="false"
           >
-            <Link href="/contact">
+            <Link href="/contact" title="contact">
               <a className="d-lg-flex d-block align-items-center">
                 <i className="fa-solid fa-phone fa-lg ms-2 me-2 "></i>
                 <b className=" d-block">Contact</b>
