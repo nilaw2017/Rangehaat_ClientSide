@@ -4,34 +4,25 @@ import Style from "./../styles/Footer.module.css";
 const Footer = () => {
   return (
     <footer className="border">
-      <section className=" d-flex align-items-center">
+      <section className="d-block d-lg-flex align-items-center justify-content-center">
         <div className={Style.logoImage}>
           <Image
             src="/favicons/android-chrome-512x512.png"
             layout="responsive"
-            width={200}
-            height={200}
+            width={100}
+            height={100}
           />
         </div>
-        <section>
-          <div className="d-flex align-items-center">
-            <h4>अध्यक्ष/संचालक :</h4>
-            <h5>पुनम पौडेल(२६२१३९)</h5>
-          </div>
-          <div className="d-flex align-items-center">
-            <h4>प्राविधिक प्रमुख : </h4>
-            <h5>नील मानन्धर</h5>
-          </div>
-          <div className="d-flex align-items-center">
-            <h4>प्रधान सम्पादक :</h4>
-            <h5>किरण पौडेल</h5>
-          </div>
+        <div className="text-center text-lg-start">
+          <h6>अध्यक्ष/संचालक :पुनम पौडेल(२६२१३९)</h6>
+          <h6>प्राविधिक प्रमुख :नील मानन्धर</h6>
+          <h6>प्रधान सम्पादक : किरण पौडेल</h6>
           <p>कलंकी, काठमाडौं</p>
-        </section>
+        </div>
       </section>
-      <center>
+      <h6 className="text-center">
         Developed By: <b>Nilaw Manandhar</b>
-      </center>
+      </h6>
     </footer>
   );
 };

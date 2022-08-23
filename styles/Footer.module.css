@@ -1,3 +1,12 @@
 .logoImage {
-    width: 350px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
 }
+
+.logoImage span{
+    width: 150px!important;
+}
+
+
+

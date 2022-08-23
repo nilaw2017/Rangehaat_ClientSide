@@ -12,3 +12,7 @@
     list-style: none;
     padding: 0!important;
 }
+
+.ulContainer li a b {
+    font-size: 1vw;
+}
