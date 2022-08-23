@@ -1,6 +1,7 @@
 import ShareIt from "./ShareIt";
 import SideBar from "./SideBar";
 import Image from "next/image";
+import Head from "next/head";
 
 export default function Post({ query }) {
   console.log(query);
@@ -61,10 +62,23 @@ export default function Post({ query }) {
         </div>
       </div>
       {/* Social Media Share Link */}
-      <div className="mt-5 mb-5">
+      {/* <div className="mt-5 mb-5">
         <h4>Share this article</h4>
         <ShareIt />
-      </div>
+        <Head>
+          <title>Social Media Preview</title>
+          <meta property="og:url" content="your url" />
+          <meta property="og:type" content="website" />
+          <meta property="fb:app_id" content="your fb app id" />
+          <meta property="og:title" content="Social Media Preview Working?" />
+          <meta name="twitter:card" content="summary" />
+          <meta
+            property="og:description"
+            content="Hurray!! Yes Social Media Preview is Working"
+          />
+          <meta property="og:image" content={"url of image"} />
+        </Head>
+      </div> */}
     </section>
   );
 }

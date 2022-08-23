@@ -46,9 +46,8 @@ a {
 }
 .new-line {
   white-space: pre-line;
-  word-spacing: 5px;
-  text-align: justify;
-  text-justify: inter-word;
+  text-align: left;
+  text-justify: auto;
 }
 .headPostImage {
   position: relative;
@@ -74,7 +73,7 @@ a {
     color-scheme: dark;
   }
   body {
-    color: rgb(236, 236, 236);
-    background: rgb(27, 27, 27);
+    color: white;
+    background: rgb(51, 51, 51);
   }
 }
