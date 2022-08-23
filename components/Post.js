@@ -25,6 +25,7 @@ export default function Post({ query }) {
       return `${query.image}`;
     }
   };
+  console.log(query);
   return (
     <section>
       <div className="row mt-5">
@@ -40,18 +41,17 @@ export default function Post({ query }) {
               {query.created_at}
             </span>
           </div>
-          {/* <img
-            src={`http://localhost:1337${query.image}`}
-            className="border img-fluid mb-5"
-            alt="test"
-          /> */}
-          <Image
-            src={imageLoading()}
-            layout="responsive"
-            width={10}
-            height={7}
-            alt="PostImage"
-          />
+          <span className="position-absolute z-1">
+            {<span className="me-1 category">{query.category}</span>}
+          </span>
+          <div className="position-relative headImageContainer bg-dark">
+            <Image
+              src={imageLoading()}
+              layout="fill"
+              objectFit="contain"
+              alt="PostImage"
+            />
+          </div>
           {console.log(query.image)}
           <p className="new-line mt-5 fs-5">
             {formattedContent(query.content)}

@@ -60,20 +60,19 @@ const HeadPost = () => {
     news.length === 0 ? (
       <p>LOADING....</p>
     ) : (
-      <div>
-        <div className="headPostImage">
+      <div className="border p-2 border-3">
+        <div className="headPostImage ">
           <span className={style.category}>
             <span className="z-1 category">
               {news[news.length - 1].category.name}
             </span>
           </span>
-          <div className="imageContainer">
+          <div className="position-relative headImageContainer bg-dark">
             <Image
               src={news[news.length - 1].image.url}
-              layout="responsive"
+              layout="fill"
+              objectFit="contain"
               className="border"
-              width={10}
-              height={7}
               alt="HeadPostImage"
             />
           </div>

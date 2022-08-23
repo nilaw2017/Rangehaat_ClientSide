@@ -46,15 +46,15 @@ a {
 }
 .new-line {
   white-space: pre-line;
-  text-align: left;
-  text-justify: auto;
+  text-align: justify;
+  text-justify: inter-word;
 }
 .headPostImage {
   position: relative;
   overflow: hidden;
 }
-.imageContainer {
-  position: relative;
+.imageContainer, .headImageContainer {
+  width: 100%;
   transition: .5s;
   img{
     transition: .9s;
@@ -64,6 +64,13 @@ a {
         transform: scale(1.3);
       }
   }
+}
+
+.headImageContainer {
+  height: 400px;
+}
+.imageContainer {
+  height: 200px;
 }
 
 

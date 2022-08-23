@@ -89,12 +89,11 @@ export default function CategoryPage({ query }) {
               <span className="position-absolute z-1">
                 {<span className="me-1 category">{category.name}</span>}
               </span>
-              <div className="imageContainer">
+              <div className="position-relative imageContainer bg-dark">
                 <Image
                   src={image.url}
-                  layout="responsive"
-                  width={10}
-                  height={7}
+                  layout="fill"
+                  objectFit="contain"
                   alt="test"
                 />
               </div>
