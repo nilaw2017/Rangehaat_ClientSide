@@ -58,7 +58,7 @@ const HeadPost = () => {
 
   const headNews =
     news.length === 0 ? (
-      <p>LOADING</p>
+      <p>LOADING....</p>
     ) : (
       <div>
         <div className="headPostImage">
@@ -78,7 +78,6 @@ const HeadPost = () => {
             />
           </div>
         </div>
-        <h3 className="f2-bold">{news[news.length - 1].title}</h3>
         <div>
           <h6 className="blockquote-footer mt-2">
             <i className="fa-solid fa-user me-1"></i>
@@ -88,6 +87,9 @@ const HeadPost = () => {
           </h6>
         </div>
 
+        <h3 className="f2-bold fw-bolder mt-3">
+          {news[news.length - 1].title}
+        </h3>
         <p className="new-line">{subContent() + " ......"}</p>
 
         <Link

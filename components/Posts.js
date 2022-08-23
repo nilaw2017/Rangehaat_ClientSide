@@ -76,10 +76,9 @@ const Posts = () => {
               </h6>
             </div>
             <div className="card-body">
-              <h5 className="card-title">{title}</h5>
-              <p className="card-text new-line">
+              <h3 className="card-title text-dark fw-bolder">{title}</h3>
+              <p className="card-text new-line text-dark">
                 {subContent(content) + " ...."}
-                {/* {console.log(content)} */}
               </p>
               <Link
                 href={{
