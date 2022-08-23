@@ -47,6 +47,8 @@ a {
 .new-line {
   white-space: pre-line;
   word-spacing: 5px;
+  text-align: justify;
+  text-justify: inter-word;
 }
 .headPostImage {
   position: relative;

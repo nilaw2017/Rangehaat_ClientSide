@@ -30,10 +30,15 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/national": [
+    "/international": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/national.js"
+      "static/chunks/pages/international.js"
+    ],
+    "/national/[storyID]": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/national/[storyID].js"
     ]
   },
   "ampFirstPages": []
