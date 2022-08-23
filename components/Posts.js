@@ -52,7 +52,7 @@ const Posts = () => {
     <section className="mt-5 row flex-row">
       {news.map(
         ({ id, slug, category, author, created_at, title, content, image }) => (
-          <div className="col-12 col-lg-4 card mb-5 p-2" key={id}>
+          <div className="col-12 col-lg-6 col-xl-4 card mb-5 p-2" key={id}>
             <div className="headPostImage">
               <span className="position-absolute z-1">
                 {<span className="me-1 category">{category.name}</span>}
@@ -63,7 +63,7 @@ const Posts = () => {
                   layout="responsive"
                   width={10}
                   height={7}
-                  alt="test"
+                  alt="PostImage"
                 />
               </div>
             </div>

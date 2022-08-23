@@ -18,7 +18,7 @@ const NavMenu = () => {
         />
         <ul className={style.ulContainer}>
           <li
-            className="nav-item mt-5 mb-5 col text-dark"
+            className="nav-item mt-3 mb-3 col text-dark"
             role="tab"
             aria-selected="false"
           >
@@ -30,7 +30,7 @@ const NavMenu = () => {
             </Link>
           </li>
           <li
-            className="nav-item mt-5 mb-5 col text-dark"
+            className="nav-item mt-3 mb-3 col text-dark"
             role="tab"
             aria-selected="false"
           >
@@ -42,7 +42,7 @@ const NavMenu = () => {
             </Link>
           </li>
           <li
-            className="nav-item mt-5 mb-5 col text-dark"
+            className="nav-item mt-3 mb-3 col text-dark"
             role="tab"
             aria-selected="false"
           >
@@ -54,7 +54,7 @@ const NavMenu = () => {
             </Link>
           </li>
           <li
-            className="nav-item mt-5 mb-5 col text-dark"
+            className="nav-item mt-3 mb-3 col text-dark"
             role="tab"
             aria-selected="false"
           >
@@ -66,7 +66,7 @@ const NavMenu = () => {
             </Link>
           </li>
           <li
-            className="nav-item mt-5 mb-5 col text-dark"
+            className="nav-item mt-3 mb-3 col text-dark"
             role="tab"
             aria-selected="false"
           >
@@ -78,7 +78,7 @@ const NavMenu = () => {
             </Link>
           </li>
           <li
-            className="nav-item mt-5 mb-5 col text-dark"
+            className="nav-item mt-3 mb-3 col text-dark"
             role="tab"
             aria-selected="false"
           >
@@ -90,7 +90,7 @@ const NavMenu = () => {
             </Link>
           </li>
           <li
-            className="nav-item mt-5 mb-5 col text-dark"
+            className="nav-item mt-3 mb-3 col text-dark"
             role="tab"
             aria-selected="false"
           >
@@ -102,7 +102,7 @@ const NavMenu = () => {
             </Link>
           </li>
           <li
-            className="nav-item mt-5 mb-5 col text-dark"
+            className="nav-item mt-3 mb-3 col text-dark"
             role="tab"
             aria-selected="false"
           >
@@ -114,7 +114,7 @@ const NavMenu = () => {
             </Link>
           </li>
           <li
-            className="nav-item mt-5 mb-5 col text-dark"
+            className="nav-item mt-3 mb-3 col text-dark"
             role="tab"
             aria-selected="false"
           >
@@ -126,7 +126,7 @@ const NavMenu = () => {
             </Link>
           </li>
           <li
-            className="nav-item mt-5 mb-5 col text-dark"
+            className="nav-item mt-3 mb-3 col text-dark"
             role="tab"
             aria-selected="false"
           >

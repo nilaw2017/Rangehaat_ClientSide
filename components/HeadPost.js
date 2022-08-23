@@ -74,7 +74,7 @@ const HeadPost = () => {
               className="border"
               width={10}
               height={7}
-              alt="test"
+              alt="HeadPostImage"
             />
           </div>
         </div>

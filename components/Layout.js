@@ -10,7 +10,7 @@ const Layout = ({ children }) => {
       <div className="col-2 bg-grey">
         <NavMenu />
       </div>
-      <div className="col-10 container">
+      <div className="col-10 container-fluid">
         <div className="d-flex justify-content-center mt-5 mb-5">
           <h1 className="d-inline bg-danger text-light p-2 display-1 font-weight-bold">
             रङ्गे

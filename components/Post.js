@@ -28,9 +28,9 @@ export default function Post({ query }) {
     <section>
       <div className="row mt-5">
         <div className="col-lg-8 col-12">
-          <h1>{query.title}</h1>
+          <h1 className="fw-bolder">{query.title}</h1>
           <div className="d-flex mb-2">
-            <span className="me-2">
+            <span className="me-2 text-secondary">
               <i className="fa-solid fa-user me-1"></i>
               {query.author}
             </span>
@@ -49,10 +49,12 @@ export default function Post({ query }) {
             layout="responsive"
             width={10}
             height={7}
-            alt="test"
+            alt="PostImage"
           />
           {console.log(query.image)}
-          <p className="new-line mt-5">{formattedContent(query.content)}</p>
+          <p className="new-line mt-5 fs-4">
+            {formattedContent(query.content)}
+          </p>
         </div>
         <div className="col-lg-4 col-12 p-2 border">
           <SideBar />
