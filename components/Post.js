@@ -52,7 +52,7 @@ export default function Post({ query }) {
             alt="PostImage"
           />
           {console.log(query.image)}
-          <p className="new-line mt-5 fs-4">
+          <p className="new-line mt-5 fs-5">
             {formattedContent(query.content)}
           </p>
         </div>

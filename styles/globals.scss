@@ -46,6 +46,7 @@ a {
 }
 .new-line {
   white-space: pre-line;
+  word-spacing: 5px;
 }
 .headPostImage {
   position: relative;
@@ -64,12 +65,14 @@ a {
   }
 }
 
+
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
   body {
-    color: white;
-    background: black;
+    color: rgb(236, 236, 236);
+    background: rgb(27, 27, 27);
   }
 }

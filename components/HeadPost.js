@@ -86,11 +86,10 @@ const HeadPost = () => {
             <span>{convertedDate()}</span>
           </h6>
         </div>
-
-        <h3 className="f2-bold fw-bolder mt-3">
-          {news[news.length - 1].title}
-        </h3>
-        <p className="new-line">{subContent() + " ......"}</p>
+        {/* HEAD POST TITLE */}
+        <h3 className="fw-bolder mt-3">{news[news.length - 1].title}</h3>
+        {/* HEAD POST CONTENT */}
+        <p className="new-line fs-5">{subContent() + " ......"}</p>
 
         <Link
           href={{

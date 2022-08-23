@@ -61,8 +61,10 @@ export default function CategoryPage({ query }) {
           >
             {/* Body Section */}
             <div className="col-9 card-body order-lg-1 order-2">
+              {/* CATEGORY POSTS TITLES */}
               <h1 className="fw-bolder card-title">{title}</h1>
-              <p className="fs-4 card-text new-line">
+              {/* CATEGORY POSTS CONTENTS */}
+              <p className="fs-5 card-text new-line">
                 {subContent(content) + " ...."}
               </p>
               <Link

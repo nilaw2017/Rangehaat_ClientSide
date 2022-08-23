@@ -7,7 +7,6 @@ const Posts = () => {
   useEffect(() => {
     const fetchData = async () => {
       await fetch(process.env.HEROKU_HOST_URL + "articles")
-        // await fetch("https://rangehaatserver.herokuapp.com/articles")
         .then((res) => res.json())
         .then((data) => {
           setNews(data);
@@ -76,8 +75,10 @@ const Posts = () => {
               </h6>
             </div>
             <div className="card-body">
+              {/* POSTS TITLES */}
               <h3 className="card-title text-dark fw-bolder">{title}</h3>
-              <p className="card-text new-line text-dark">
+              {/* POSTS CONTENTS */}
+              <p className="card-text new-line text-dark fs-5">
                 {subContent(content) + " ...."}
               </p>
               <Link
