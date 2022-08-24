@@ -16,7 +16,7 @@ const NavMenu = () => {
           priority
           alt="test"
         />
-        <h6>Rangehaat</h6>
+        <h6 className="text-dark">Rangehaat</h6>
         <ul className={style.ulContainer}>
           <li
             className="nav-item mt-3 mb-3 col text-dark"
