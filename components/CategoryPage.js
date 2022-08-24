@@ -64,7 +64,7 @@ export default function CategoryPage({ query }) {
               {/* CATEGORY POSTS TITLES */}
               <h3 className="fw-bolder card-title">{title}</h3>
               {/* CATEGORY POSTS CONTENTS */}
-              <p className="fs-5 card-text new-line">
+              <p className="fs-5 card-text new-line text-dark">
                 {subContent(content) + " ...."}
               </p>
               <Link
