@@ -1,7 +1,7 @@
 export default function SideBar() {
   return (
     <>
-      <h2>Advertisement</h2>
+      <h2>Under Development</h2>
     </>
   );
 }

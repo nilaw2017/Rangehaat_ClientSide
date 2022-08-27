@@ -27,58 +27,71 @@ export default function Post({ query }) {
   };
   console.log(query);
   return (
-    <section>
-      <div className="row mt-5">
-        <div className="col-lg-8 col-12">
-          <h1 className="fw-bolder">{query.title}</h1>
-          <div className="d-flex mb-2">
-            <span className="me-2 text-secondary">
-              <i className="fa-solid fa-user me-1"></i>
-              {query.author}
+    <>
+      <Head>
+        {/* FACEBOOK META SHARE */}
+        <meta
+          property="og:url"
+          content="http://www.nytimes.com/2015/02/19/arts/international/when-great-minds-dont-think-alike.html"
+        />
+        <meta property="og:type" content="article" />
+        <meta
+          property="og:title"
+          content="When Great Minds Don’t Think Alike"
+        />
+        <meta
+          property="og:description"
+          content="How much does culture influence creative thinking?"
+        />
+        <meta
+          property="og:image"
+          content="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg"
+        />
+      </Head>
+      <section>
+        <div className="row mt-5">
+          <div className="col-lg-8 col-12">
+            <h1 className="fw-bolder">{query.title}</h1>
+            <div className="d-flex mb-2">
+              <span className="me-2 text-secondary">
+                <i className="fa-solid fa-user me-1"></i>
+                {query.author}
+              </span>
+              <span className="text-secondary">
+                <i className="fa-solid fa-calendar-days me-1"></i>
+                {query.created_at}
+              </span>
+            </div>
+            <span className="position-absolute z-1">
+              {<span className="me-1 category">{query.category}</span>}
             </span>
-            <span className="text-secondary">
-              <i className="fa-solid fa-calendar-days me-1"></i>
-              {query.created_at}
-            </span>
+            <div className="position-relative headImageContainer bg-dark">
+              <Image
+                src={imageLoading()}
+                layout="fill"
+                objectFit="contain"
+                alt="PostImage"
+              />
+            </div>
+            {console.log(query.image)}
+            <p className="new-line mt-5 fs-5">
+              {formattedContent(query.content)}
+            </p>
           </div>
-          <span className="position-absolute z-1">
-            {<span className="me-1 category">{query.category}</span>}
-          </span>
-          <div className="position-relative headImageContainer bg-dark">
-            <Image
-              src={imageLoading()}
-              layout="fill"
-              objectFit="contain"
-              alt="PostImage"
-            />
+          <div className="col-lg-4 col-12 p-2 border">
+            <SideBar />
           </div>
-          {console.log(query.image)}
-          <p className="new-line mt-5 fs-5">
-            {formattedContent(query.content)}
-          </p>
         </div>
-        <div className="col-lg-4 col-12 p-2 border">
-          <SideBar />
-        </div>
-      </div>
-      {/* Social Media Share Link */}
-      {/* <div className="mt-5 mb-5">
-        <h4>Share this article</h4>
-        <ShareIt />
-        <Head>
-          <title>Social Media Preview</title>
-          <meta property="og:url" content="your url" />
-          <meta property="og:type" content="website" />
-          <meta property="fb:app_id" content="your fb app id" />
-          <meta property="og:title" content="Social Media Preview Working?" />
-          <meta name="twitter:card" content="summary" />
-          <meta
-            property="og:description"
-            content="Hurray!! Yes Social Media Preview is Working"
-          />
-          <meta property="og:image" content={"url of image"} />
-        </Head>
-      </div> */}
-    </section>
+        <iframe
+          src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&layout=button_count&size=small&appId=554848223043305&width=96&height=20"
+          width="96"
+          height="20"
+          scrolling="no"
+          frameBorder="0"
+          allowFullScreen={true}
+          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+        ></iframe>
+      </section>
+    </>
   );
 }

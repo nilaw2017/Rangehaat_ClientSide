@@ -12,6 +12,7 @@ export default function Document() {
           name="description"
           content="Rangehaat - The New Way Of Journalism, Business news, National news, Nepal news, Technology news, Notices, Nature news, International news, China news, India news"
         ></meta>
+
         <link
           rel="apple-touch-icon"
           sizes="180x180"
