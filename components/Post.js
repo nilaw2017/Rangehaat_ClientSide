@@ -2,8 +2,12 @@ import ShareIt from "./ShareIt";
 import SideBar from "./SideBar";
 import Image from "next/image";
 import Head from "next/head";
+import { useRouter } from "next/router";
 
 export default function Post({ query }) {
+  const { asPath, pathname } = useRouter();
+  console.log(asPath); // '/blog/xyz'
+  console.log(pathname); // '/blog/[slug]'
   const formattedContent = (params) => {
     if (params == undefined) {
       return 0;
@@ -24,15 +28,13 @@ export default function Post({ query }) {
       return `${query.image}`;
     }
   };
+  console.log(`${process.env.HOST_URL}${asPath}`);
   return (
     <>
       <Head>
         <title>{`Rangehaat: ${query.title}`}</title>
         {/* FACEBOOK META SHARE */}
-        <meta
-          property="og:url"
-          content="http://www.nytimes.com/2015/02/19/arts/international/when-great-minds-dont-think-alike.html"
-        />
+        <meta property="og:url" content={`${process.env.HOST_URL}${asPath}`} />
         <meta property="og:type" content="article" />
         <meta
           property="og:title"

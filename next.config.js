@@ -9,6 +9,7 @@ const nextConfig = {
   env: {
     LOCALHOST_URL: "http://localhost:1337/",
     HEROKU_HOST_URL: "https://rangehaatserver.herokuapp.com/",
+    HOST_URL: "https://www.rangehaat.com/",
     // CLOUDINARY_IMAGE: "res.cloudinary.com",
   },
 };
