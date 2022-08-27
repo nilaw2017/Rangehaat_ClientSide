@@ -6,12 +6,12 @@ export default function Home() {
   return (
     <main>
       <div className="row mt-5 mb-5">
-        <div className="col-12">
+        <div className="col-12 col-lg-8">
           <HeadPost />
         </div>
-        {/* <div className="col-lg-4 col-12 border">
+        <div className="col-lg-4 col-12 border">
           <SideBar />
-        </div> */}
+        </div>
       </div>
       <hr />
       <Posts />

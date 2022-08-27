@@ -104,6 +104,9 @@ const HeadPost = () => {
               image: news[news.length - 1].image.url,
             },
           }}
+          as={`/${news[news.length - 1].category.name.toLowerCase()}/${
+            news[news.length - 1].slug
+          }`}
         >
           <a className="btn btn-primary">Read More</a>
         </Link>

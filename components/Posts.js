@@ -33,6 +33,7 @@ const Posts = () => {
       return joinedParagraph2;
     }
   };
+
   const convertedDate = (params) => {
     const dateAndTime = params;
 
@@ -48,58 +49,73 @@ const Posts = () => {
     return joinedDate;
   };
   return (
-    <section className="mt-5 row flex-row">
-      {news.map(
-        ({ id, slug, category, author, created_at, title, content, image }) => (
-          <div className="col-12 col-lg-6 col-xl-4 card mb-5 p-2" key={id}>
-            <div className="headPostImage">
-              <span className="position-absolute z-1">
-                {<span className="me-1 category">{category.name}</span>}
-              </span>
-              <div className="imageContainer bg-dark">
-                <Image
-                  src={image.url}
-                  layout="fill"
-                  objectFit="contain"
-                  alt="PostImage"
-                />
+    <>
+      <section className="mt-5 row flex-row">
+        {[...news]
+          .reverse()
+          .map(
+            ({
+              id,
+              slug,
+              category,
+              author,
+              created_at,
+              title,
+              content,
+              image,
+            }) => (
+              <div className="col-12 col-lg-6 col-xl-4 card mb-5 p-2" key={id}>
+                <div className="headPostImage" id="banner">
+                  <span className="position-absolute z-1">
+                    {<span className="me-1 category">{category.name}</span>}
+                  </span>
+                  <div className="imageContainer bg-dark">
+                    <Image
+                      src={image.url}
+                      layout="fill"
+                      objectFit="contain"
+                      alt="PostImage"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <p className="blockquote-footer mt-2">
+                    <i className="fa-solid fa-user me-1"></i>
+                    <span className="me-2">{author.name}</span>
+                    <i className="fa-solid fa-calendar-days me-1"></i>
+                    <span>{convertedDate(created_at)}</span>
+                  </p>
+                </div>
+                <div className="card-body">
+                  {/* POSTS TITLES */}
+                  <h3 className="card-title text-dark fw-bolder">{title}</h3>
+                  {/* POSTS CONTENTS */}
+                  <p className="card-text new-line text-dark fs-6">
+                    {subContent(content) + " ...."}
+                  </p>
+                  <Link
+                    // onClick={handleImage()}
+                    href={{
+                      pathname: `/${category.name.toLowerCase()}/${slug}`,
+                      query: {
+                        title,
+                        content,
+                        author: author.name,
+                        category: category.name,
+                        created_at: convertedDate(created_at),
+                        image: image.url,
+                      },
+                    }}
+                    as={`/${category.name.toLowerCase()}/${slug}`}
+                  >
+                    <a className="btn btn-primary">Read More</a>
+                  </Link>
+                </div>
               </div>
-            </div>
-            <div>
-              <p className="blockquote-footer mt-2">
-                <i className="fa-solid fa-user me-1"></i>
-                <span className="me-2">{author.name}</span>
-                <i className="fa-solid fa-calendar-days me-1"></i>
-                <span>{convertedDate(created_at)}</span>
-              </p>
-            </div>
-            <div className="card-body">
-              {/* POSTS TITLES */}
-              <h3 className="card-title text-dark fw-bolder">{title}</h3>
-              {/* POSTS CONTENTS */}
-              <p className="card-text new-line text-dark fs-5">
-                {subContent(content) + " ...."}
-              </p>
-              <Link
-                href={{
-                  pathname: `/${category.name.toLowerCase()}/${slug}`,
-                  query: {
-                    title,
-                    content,
-                    author: author.name,
-                    category: category.name,
-                    created_at: convertedDate(created_at),
-                    image: image.url,
-                  },
-                }}
-              >
-                <a className="btn btn-primary">Read More</a>
-              </Link>
-            </div>
-          </div>
-        )
-      )}
-    </section>
+            )
+          )}
+      </section>
+    </>
   );
 };
 

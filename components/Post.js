@@ -4,7 +4,6 @@ import Image from "next/image";
 import Head from "next/head";
 
 export default function Post({ query }) {
-  console.log(query);
   const formattedContent = (params) => {
     if (params == undefined) {
       return 0;
@@ -25,10 +24,10 @@ export default function Post({ query }) {
       return `${query.image}`;
     }
   };
-  console.log(query);
   return (
     <>
       <Head>
+        <title>{`Rangehaat: ${query.title}`}</title>
         {/* FACEBOOK META SHARE */}
         <meta
           property="og:url"
@@ -73,7 +72,6 @@ export default function Post({ query }) {
                 alt="PostImage"
               />
             </div>
-            {console.log(query.image)}
             <p className="new-line mt-5 fs-5">
               {formattedContent(query.content)}
             </p>
