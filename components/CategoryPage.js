@@ -79,6 +79,7 @@ export default function CategoryPage({ query }) {
                     image: image.url,
                   },
                 }}
+                as={`/${category.name.toLowerCase()}/${slug}`}
               >
                 <a className="btn btn-primary">Read More</a>
               </Link>
