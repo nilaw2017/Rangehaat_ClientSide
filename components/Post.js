@@ -36,18 +36,9 @@ export default function Post({ query }) {
         {/* FACEBOOK META SHARE */}
         <meta property="og:url" content={`${process.env.HOST_URL}${asPath}`} />
         <meta property="og:type" content="article" />
-        <meta
-          property="og:title"
-          content="When Great Minds Don’t Think Alike"
-        />
-        <meta
-          property="og:description"
-          content="How much does culture influence creative thinking?"
-        />
-        <meta
-          property="og:image"
-          content="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg"
-        />
+        <meta property="og:title" content={`${query.title}`} />
+        <meta property="og:description" content={`${query.content}`} />
+        <meta property="og:image" content={`${query.image}`} />
       </Head>
       <section>
         <div className="row mt-5">
