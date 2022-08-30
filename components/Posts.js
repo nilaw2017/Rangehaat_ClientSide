@@ -97,16 +97,8 @@ const Posts = () => {
                     // onClick={handleImage()}
                     href={{
                       pathname: `/${category.name.toLowerCase()}/${slug}`,
-                      query: {
-                        title,
-                        content,
-                        author: author.name,
-                        category: category.name,
-                        created_at: convertedDate(created_at),
-                        image: image.url,
-                      },
                     }}
-                    as={`/${category.name.toLowerCase()}/${slug}`}
+                    // as={`/${category.name.toLowerCase()}/${slug}`}
                   >
                     <a className="btn btn-primary">Read More</a>
                   </Link>

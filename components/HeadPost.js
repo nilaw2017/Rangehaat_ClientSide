@@ -95,18 +95,7 @@ const HeadPost = () => {
             pathname: `/${news[news.length - 1].category.name.toLowerCase()}/${
               news[news.length - 1].slug
             }`,
-            query: {
-              title: news[news.length - 1].title,
-              content: news[news.length - 1].content,
-              author: news[news.length - 1].author.name,
-              category: news[news.length - 1].category.name,
-              created_at: convertedDate(news[news.length - 1].created_at),
-              image: news[news.length - 1].image.url,
-            },
           }}
-          as={`/${news[news.length - 1].category.name.toLowerCase()}/${
-            news[news.length - 1].slug
-          }`}
         >
           <a className="btn btn-primary">Read More</a>
         </Link>

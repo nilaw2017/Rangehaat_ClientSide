@@ -8,10 +8,18 @@ export default function CategoryPage({ query }) {
   const [isLoading, setLoading] = useState(false);
   useEffect(() => {
     console.log("CategoryPage", query);
-
+    const convertedQuery = () => {
+      const formattedQuery = query;
+      const splittedQuery = formattedQuery.split("");
+      const slicedQuery = splittedQuery.slice(9, 35);
+      const joinedQuery = slicedQuery.join(",");
+      const joinedQuery2 = joinedQuery.replace(/,/g, "");
+      return joinedQuery2;
+    };
     // setLoading(true);
     const fetchData = async () => {
       await fetch(process.env.HEROKU_HOST_URL + "categories" + query)
+        // await fetch(process.env.HEROKU_HOST_URL + "categories" + convertedQuery())
         .then((res) => res.json())
         .then((data) => {
           setCategory(data);

@@ -2,5 +2,9 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/national/[storyID]": "pages/national/[storyID].js"
+  "/business/[storyID]": "pages/business/[storyID].js",
+  "/technology": "pages/technology.js",
+  "/": "pages/index.js",
+  "/national/[storyID]": "pages/national/[storyID].js",
+  "/international": "pages/international.js"
 }
