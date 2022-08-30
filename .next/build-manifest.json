@@ -30,25 +30,10 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/business/[storyID]": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/business/[storyID].js"
-    ],
-    "/international": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/international.js"
-    ],
     "/national/[storyID]": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
       "static/chunks/pages/national/[storyID].js"
-    ],
-    "/technology": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/technology.js"
     ]
   },
   "ampFirstPages": []

@@ -73,7 +73,7 @@ export default function Post({ query }) {
       <div>
         <Head>
           <title>{`Rangehaat: ${news.title}`}</title>
-          FACEBOOK META SHARE
+          {/* FACEBOOK META SHARE */}
           <meta
             property="og:url"
             content={`${process.env.HOST_URL}${router.query.storyID}`}
