@@ -9,7 +9,12 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>RangeHaat - The New Way Towards Journalism </title>
+        <meta charset="UTF-8" />
+        <meta
+          name="keywords"
+          content="news, nepal, nepali, technology, corruption, daily_news"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <Layout>
         <Component {...pageProps} />

@@ -56,21 +56,18 @@ export default function Post({ query }) {
 
     return joinedDate;
   };
-  // console.log(news.image.url);
-  console.log(process.env.HOST_URL + router.asPath);
   const compressedURL = process.env.HOST_URL + router.asPath;
   const convertedURL = (data) => {
     const url = data;
-    // const splittedURL = url.split("");
     const replacingColon = url.replace(/:/g, "%3A");
     const replacingSlash = replacingColon.replace(new RegExp("/", "g"), "%2f");
-    console.log(replacingSlash);
     return replacingSlash;
   };
   return (
     <>
       <Head>
         <title>{`Rangehaat: ${news.title}`}</title>
+        <meta name="description" content={news.description} />
         {/* FACEBOOK META SHARE */}
         <meta property="og:url" content={compressedURL} />
         <meta property="og:type" content="website" />
@@ -109,17 +106,11 @@ export default function Post({ query }) {
             <SideBar />
           </div>
         </div>
-        <iframe
-          src={`https://www.facebook.com/plugins/share_button.php?href=${convertedURL(
-            compressedURL
-          )}&layout=button_count&size=small&appId=554848223043305&width=77&height=20`}
-          width="96"
-          height="20"
-          scrolling="no"
-          frameBorder="0"
-          allowFullScreen={true}
-          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-        ></iframe>
+        <ShareIt
+          url={compressedURL}
+          title={news.title}
+          description={news.description}
+        />
       </section>
     </>
   );

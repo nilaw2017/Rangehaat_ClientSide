@@ -12,6 +12,7 @@
     "bootstrap": "^5.2.0",
     "dotenv": "^16.0.1",
     "next": "12.2.3",
+    "next-share": "^0.18.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-responsive-carousel": "^3.2.23",

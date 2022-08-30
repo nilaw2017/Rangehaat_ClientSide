@@ -4,10 +4,6 @@ export default function Document() {
   return (
     <Html>
       <Head>
-        <meta
-          name="keywords"
-          content="news, nepal, nepali, technology, corruption, daily_news"
-        />
         {/* <meta
           name="description"
           content="Rangehaat - The New Way Of Journalism, Business news, National news, Nepal news, Technology news, Notices, Nature news, International news, China news, India news"
