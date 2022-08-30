@@ -7,13 +7,12 @@ import { useState, useEffect } from "react";
 
 export default function Post({ query }) {
   const router = useRouter();
-  console.log(router);
   const [news, setNews] = useState([]);
   const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
     if (!router.isReady) {
-      return console.log("Not Ready");
+      return;
     } else {
       console.log("Ready");
       const fetchData = async () => {
@@ -24,7 +23,6 @@ export default function Post({ query }) {
           .then((data) => {
             setNews(data);
             setLoading(false);
-            console.log("param", param);
           })
           .catch((error) => console.log("ERROR", error));
       };
@@ -39,17 +37,7 @@ export default function Post({ query }) {
       </>
     );
   }
-  console.log(news);
-
-  const formattedContent = (params) => {
-    if (params == undefined) {
-      return 0;
-    } else {
-      const someHTMLString = params;
-      return someHTMLString;
-    }
-  };
-
+  // IMAGE LOADER
   const imageLoading = () => {
     if (news.image.url == undefined) {
       return <h1>LOADING</h1>;
@@ -79,8 +67,8 @@ export default function Post({ query }) {
             content={`${process.env.HOST_URL}${router.query.storyID}`}
           />
           <meta property="og:type" content="article" />
-          <meta property="og:title" content="" />
-          <meta property="og:description" content="" />
+          <meta property="og:title" content={`${news.title}`} />
+          <meta property="og:description" content={`${news.description}`} />
           <meta property="og:image" content={`${news.image.url}`} />
         </Head>
         <section>
@@ -90,7 +78,6 @@ export default function Post({ query }) {
               <div className="d-flex mb-2">
                 <span className="me-2 text-secondary">
                   <i className="fa-solid fa-user me-1"></i>
-                  {/* {!news.author ? "author" : news.author.name} */}
                   {news.author.name}
                 </span>
                 <span className="text-secondary">
@@ -116,7 +103,7 @@ export default function Post({ query }) {
             </div>
           </div>
           <iframe
-            src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&layout=button_count&size=small&appId=554848223043305&width=96&height=20"
+            src={`${process.env.HOST_URL}${router.asPath}`}
             width="96"
             height="20"
             scrolling="no"
