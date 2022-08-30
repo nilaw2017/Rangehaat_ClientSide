@@ -56,63 +56,71 @@ export default function Post({ query }) {
 
     return joinedDate;
   };
+  // console.log(news.image.url);
+  console.log(process.env.HOST_URL + router.asPath);
+  const compressedURL = process.env.HOST_URL + router.asPath;
+  const convertedURL = (data) => {
+    const url = data;
+    // const splittedURL = url.split("");
+    const replacingColon = url.replace(/:/g, "%3A");
+    const replacingSlash = replacingColon.replace(new RegExp("/", "g"), "%2f");
+    console.log(replacingSlash);
+    return replacingSlash;
+  };
   return (
     <>
-      <div>
-        <Head>
-          <title>{`Rangehaat: ${news.title}`}</title>
-          {/* FACEBOOK META SHARE */}
-          <meta
-            property="og:url"
-            content={`${process.env.HOST_URL}${router.query.storyID}`}
-          />
-          <meta property="og:type" content="article" />
-          <meta property="og:title" content={`${news.title}`} />
-          <meta property="og:description" content={`${news.description}`} />
-          <meta property="og:image" content={`${news.image.url}`} />
-        </Head>
-        <section>
-          <div className="row mt-5">
-            <div className="col-lg-8 col-12">
-              <h1 className="fw-bolder">{news.title}</h1>
-              <div className="d-flex mb-2">
-                <span className="me-2 text-secondary">
-                  <i className="fa-solid fa-user me-1"></i>
-                  {news.author.name}
-                </span>
-                <span className="text-secondary">
-                  <i className="fa-solid fa-calendar-days me-1"></i>
-                  {convertedDate(news.created_at)}
-                </span>
-              </div>
-              <span className="position-absolute z-1">
-                {<span className="me-1 category">{news.category.name}</span>}
+      <Head>
+        <title>{`Rangehaat: ${news.title}`}</title>
+        {/* FACEBOOK META SHARE */}
+        <meta property="og:url" content={compressedURL} />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={news.title} />
+        <meta property="og:description" content={news.description} />
+        <meta property="og:image" content={news.image.url} />
+      </Head>
+      <section>
+        <div className="row mt-5">
+          <div className="col-lg-8 col-12">
+            <h1 className="fw-bolder">{news.title}</h1>
+            <div className="d-flex mb-2">
+              <span className="me-2 text-secondary">
+                <i className="fa-solid fa-user me-1"></i>
+                {news.author.name}
               </span>
-              <div className="position-relative headImageContainer bg-dark">
-                <Image
-                  src={imageLoading(news.image.url)}
-                  layout="fill"
-                  objectFit="contain"
-                  alt="PostImage"
-                />
-              </div>
-              <p className="new-line mt-5 fs-5">{news.content}</p>
+              <span className="text-secondary">
+                <i className="fa-solid fa-calendar-days me-1"></i>
+                {convertedDate(news.created_at)}
+              </span>
             </div>
-            <div className="col-lg-4 col-12 p-2 border">
-              <SideBar />
+            <span className="position-absolute z-1">
+              {<span className="me-1 category">{news.category.name}</span>}
+            </span>
+            <div className="position-relative headImageContainer bg-dark">
+              <Image
+                src={imageLoading(news.image.url)}
+                layout="fill"
+                objectFit="contain"
+                alt="PostImage"
+              />
             </div>
+            <p className="new-line mt-5 fs-5">{news.content}</p>
           </div>
-          <iframe
-            src={`${process.env.HOST_URL}${router.asPath}`}
-            width="96"
-            height="20"
-            scrolling="no"
-            frameBorder="0"
-            allowFullScreen={true}
-            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-          ></iframe>
-        </section>
-      </div>
+          <div className="col-lg-4 col-12 p-2 border">
+            <SideBar />
+          </div>
+        </div>
+        <iframe
+          src={`https://www.facebook.com/plugins/share_button.php?href=${convertedURL(
+            compressedURL
+          )}&layout=button_count&size=small&appId=554848223043305&width=77&height=20`}
+          width="96"
+          height="20"
+          scrolling="no"
+          frameBorder="0"
+          allowFullScreen={true}
+          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+        ></iframe>
+      </section>
     </>
   );
 }
