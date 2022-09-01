@@ -132,7 +132,7 @@ const Posts = () => {
       </section>
       <div className="d-flex justify-content-center">
         <button
-          className="w-25 btn bg-success text-light"
+          className=" btn bg-success text-light"
           onClick={loadMore}
           disabled={limit >= count}
         >
