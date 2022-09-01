@@ -4,9 +4,16 @@ import Link from "next/link";
 const Posts = () => {
   const [news, setNews] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [lazyLoad, setLazyLoad] = useState(true);
+  const [limit, setLimit] = useState(6);
+  const [count, setCount] = useState(0);
   useEffect(() => {
     const fetchData = async () => {
-      await fetch(process.env.HEROKU_HOST_URL + "articles")
+      await fetch(
+        `${process.env.HEROKU_HOST_URL}articles?${
+          lazyLoad == true ? `_limit=${limit}` : `_limit=${limit}`
+        } `
+      )
         .then((res) => res.json())
         .then((data) => {
           setNews(data);
@@ -14,9 +21,24 @@ const Posts = () => {
         })
         .catch((error) => console.log("ERROR", error));
     };
-
+    const totalPosts = async () => {
+      await fetch(`${process.env.HEROKU_HOST_URL}articles/count`)
+        .then((res) => res.json())
+        .then((count) => setCount(count));
+    };
     fetchData();
-  }, []);
+    totalPosts();
+  }, [lazyLoad]);
+  console.log("outer", lazyLoad);
+  const loadMore = () => {
+    lazyLoad == true ? setLazyLoad(false) : setLazyLoad(true);
+    setLimit(limit + 3);
+    if (lazyLoad == true) {
+      setLazyLoad(false);
+      console.log("Load new posts", lazyLoad);
+    }
+  };
+  console.log(count);
   if (loading) {
     <p>Loading.....</p>;
   }
@@ -67,9 +89,11 @@ const Posts = () => {
               <div className="col-12 col-lg-6 col-xl-4 card mb-5 p-2" key={id}>
                 <div className="headPostImage" id="banner">
                   <span className="position-absolute z-1">
+                    {/* POST CATEGORY NAME */}
                     {<span className="me-1 category">{category.name}</span>}
                   </span>
                   <div className="imageContainer bg-dark">
+                    {/* POST IMAGE */}
                     <Image
                       src={image.url}
                       layout="fill"
@@ -98,7 +122,6 @@ const Posts = () => {
                     href={{
                       pathname: `/${category.name.toLowerCase()}/${slug}`,
                     }}
-                    // as={`/${category.name.toLowerCase()}/${slug}`}
                   >
                     <a className="btn btn-primary">Read More</a>
                   </Link>
@@ -107,6 +130,15 @@ const Posts = () => {
             )
           )}
       </section>
+      <div className="d-flex justify-content-center">
+        <button
+          className="w-25 btn bg-success text-light"
+          onClick={loadMore}
+          disabled={limit >= count}
+        >
+          Load More
+        </button>
+      </div>
     </>
   );
 };

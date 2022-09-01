@@ -57,23 +57,19 @@ export default function Post({ query }) {
     return joinedDate;
   };
   const compressedURL = process.env.HOST_URL + router.asPath;
-  const convertedURL = (data) => {
-    const url = data;
-    const replacingColon = url.replace(/:/g, "%3A");
-    const replacingSlash = replacingColon.replace(new RegExp("/", "g"), "%2f");
-    return replacingSlash;
-  };
   return (
     <>
       <Head>
-        <title>{`Rangehaat: ${news.title}`}</title>
+        <title>{`${news.title} - Rangehaat`}</title>
+        {/* <meta property="og:title" content={news.title} /> */}
         <meta name="description" content={news.description} />
         {/* FACEBOOK META SHARE */}
+        <meta data-rh="true" property="og:title" content={news.title} />
         <meta property="og:url" content={compressedURL} />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content={news.title} />
+        <meta property="og:type" content="article" />
         <meta property="og:description" content={news.description} />
         <meta property="og:image" content={news.image.url} />
+        <meta property="fb:app_id" content="554848223043305" />
       </Head>
       <section>
         <div className="row mt-5">
