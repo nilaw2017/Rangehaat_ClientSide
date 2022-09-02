@@ -10,7 +10,7 @@ const Posts = () => {
   useEffect(() => {
     const fetchData = async () => {
       await fetch(
-        `${process.env.HEROKU_HOST_URL}articles?${
+        `${process.env.HEROKU_HOST_URL}articles?_sort=id:desc&${
           lazyLoad == true ? `_limit=${limit}` : `_limit=${limit}`
         } `
       )
@@ -29,20 +29,19 @@ const Posts = () => {
     fetchData();
     totalPosts();
   }, [lazyLoad]);
-  console.log("outer", lazyLoad);
+  console.log("Not Reversed ==>", news);
+
   const loadMore = () => {
     lazyLoad == true ? setLazyLoad(false) : setLazyLoad(true);
     setLimit(limit + 3);
     if (lazyLoad == true) {
       setLazyLoad(false);
-      console.log("Load new posts", lazyLoad);
     }
   };
-  console.log(count);
   if (loading) {
     <p>Loading.....</p>;
   }
-  news.pop();
+  news.shift();
   const subContent = (params) => {
     if (params === null) {
       return 0;
@@ -73,62 +72,60 @@ const Posts = () => {
   return (
     <>
       <section className="mt-5 row flex-row">
-        {[...news]
-          .reverse()
-          .map(
-            ({
-              id,
-              slug,
-              category,
-              author,
-              created_at,
-              title,
-              content,
-              image,
-            }) => (
-              <div className="col-12 col-lg-6 col-xl-4 card mb-5 p-2" key={id}>
-                <div className="headPostImage" id="banner">
-                  <span className="position-absolute z-1">
-                    {/* POST CATEGORY NAME */}
-                    {<span className="me-1 category">{category.name}</span>}
-                  </span>
-                  <div className="imageContainer bg-dark">
-                    {/* POST IMAGE */}
-                    <Image
-                      src={image.url}
-                      layout="fill"
-                      objectFit="contain"
-                      alt="PostImage"
-                    />
-                  </div>
-                </div>
-                <div>
-                  <p className="blockquote-footer mt-2">
-                    <i className="fa-solid fa-user me-1"></i>
-                    <span className="me-2">{author.name}</span>
-                    <i className="fa-solid fa-calendar-days me-1"></i>
-                    <span>{convertedDate(created_at)}</span>
-                  </p>
-                </div>
-                <div className="card-body">
-                  {/* POSTS TITLES */}
-                  <h3 className="card-title text-dark fw-bolder">{title}</h3>
-                  {/* POSTS CONTENTS */}
-                  <p className="card-text new-line text-dark fs-6">
-                    {subContent(content) + " ...."}
-                  </p>
-                  <Link
-                    // onClick={handleImage()}
-                    href={{
-                      pathname: `/${category.name.toLowerCase()}/${slug}`,
-                    }}
-                  >
-                    <a className="btn btn-primary">Read More</a>
-                  </Link>
+        {[...news].map(
+          ({
+            id,
+            slug,
+            category,
+            author,
+            created_at,
+            title,
+            content,
+            image,
+          }) => (
+            <div className="col-12 col-lg-6 col-xl-4 card mb-5 p-2" key={id}>
+              <div className="headPostImage" id="banner">
+                <span className="position-absolute z-1">
+                  {/* POST CATEGORY NAME */}
+                  {<span className="me-1 category">{category.name}</span>}
+                </span>
+                <div className="imageContainer bg-dark">
+                  {/* POST IMAGE */}
+                  <Image
+                    src={image.url}
+                    layout="fill"
+                    objectFit="contain"
+                    alt="PostImage"
+                  />
                 </div>
               </div>
-            )
-          )}
+              <div>
+                <p className="blockquote-footer mt-2">
+                  <i className="fa-solid fa-user me-1"></i>
+                  <span className="me-2">{author.name}</span>
+                  <i className="fa-solid fa-calendar-days me-1"></i>
+                  <span>{convertedDate(created_at)}</span>
+                </p>
+              </div>
+              <div className="card-body">
+                {/* POSTS TITLES */}
+                <h3 className="card-title text-dark fw-bolder">{title}</h3>
+                {/* POSTS CONTENTS */}
+                <p className="card-text new-line text-dark fs-6">
+                  {subContent(content) + " ...."}
+                </p>
+                <Link
+                  // onClick={handleImage()}
+                  href={{
+                    pathname: `/${category.name.toLowerCase()}/${slug}`,
+                  }}
+                >
+                  <a className="btn btn-primary">Read More</a>
+                </Link>
+              </div>
+            </div>
+          )
+        )}
       </section>
       <div className="d-flex justify-content-center">
         <button
