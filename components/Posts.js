@@ -29,7 +29,7 @@ const Posts = () => {
     fetchData();
     totalPosts();
   }, [lazyLoad]);
-  console.log("Not Reversed ==>", news);
+  // console.log("Not Reversed ==>", news);
 
   const loadMore = () => {
     lazyLoad == true ? setLazyLoad(false) : setLazyLoad(true);
@@ -109,7 +109,7 @@ const Posts = () => {
               </div>
               <div className="card-body">
                 {/* POSTS TITLES */}
-                <h3 className="card-title text-dark fw-bolder">{title}</h3>
+                <h3 className="card-title text-dark fw-bolder fs-4">{title}</h3>
                 {/* POSTS CONTENTS */}
                 <p className="card-text new-line text-dark fs-6">
                   {subContent(content) + " ...."}

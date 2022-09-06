@@ -74,7 +74,7 @@ export default function Post({ query }) {
       <section>
         <div className="row mt-5">
           <div className="col-lg-8 col-12">
-            <h1 className="fw-bolder">{news.title}</h1>
+            <h1 className="fw-bolder fs-3">{news.title}</h1>
             <div className="d-flex mb-2">
               <span className="me-2 text-secondary">
                 <i className="fa-solid fa-user me-1"></i>

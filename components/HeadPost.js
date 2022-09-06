@@ -10,7 +10,9 @@ const HeadPost = () => {
   const fetchData = async () => {
     setLoading(true);
     // const res = await fetch(process.env.API_HOST_URL + "articles");
-    const res = await fetch(process.env.HEROKU_HOST_URL + "articles");
+    const res = await fetch(
+      process.env.HEROKU_HOST_URL + "articles?_sort=id:desc"
+    );
     const data = await res.json();
     setNews(data);
     setLoading(false);
@@ -20,10 +22,10 @@ const HeadPost = () => {
     fetchData();
   }, []);
   if (loading) {
-    return <p>Data is loading...</p>;
+    return <p>Latest Post is LOADING...</p>;
   }
   const convertedDate = () => {
-    const dateAndTime = news[news.length - 1].created_at;
+    const dateAndTime = news[0].created_at;
 
     const splittedDateAndTime = dateAndTime.split("");
 
@@ -37,7 +39,7 @@ const HeadPost = () => {
     return joinedDate;
   };
   const subContent = () => {
-    const paragraph = news[news.length - 1].content;
+    const paragraph = news[0].content;
     const splittedParagraph = paragraph.split(" ");
     const slicedParagraph = splittedParagraph.slice(0, 40);
 
@@ -63,38 +65,40 @@ const HeadPost = () => {
       <div className="border p-2 border-3">
         <div className="headPostImage ">
           <span className={style.category}>
-            <span className="z-1 category">
-              {news[news.length - 1].category.name}
-            </span>
+            <span className="z-1 category">{news[0].category.name}</span>
           </span>
           <div className="position-relative headImageContainer bg-dark">
-            <Image
-              src={news[news.length - 1].image.url}
-              layout="fill"
-              objectFit="contain"
-              className="border"
-              alt="HeadPostImage"
-            />
+            {!news[0].image.url ? (
+              <></>
+            ) : (
+              <Image
+                src={news[0].image.url}
+                layout="fill"
+                objectFit="contain"
+                className="border"
+                alt="HeadPostImage"
+              />
+            )}
           </div>
         </div>
         <div>
           <p className="blockquote-footer mt-2">
             <i className="fa-solid fa-user me-1"></i>
-            <span className="me-2">{news[news.length - 1].author.name}</span>
+            <span className="me-2">
+              {!news[0].author ? <></> : news[0].author.name}
+            </span>
             <i className="fa-solid fa-calendar-days me-1"></i>
             <span>{convertedDate()}</span>
           </p>
         </div>
         {/* HEAD POST TITLE */}
-        <h3 className="fw-bolder mt-3">{news[news.length - 1].title}</h3>
+        <h3 className="fw-bolder mt-4">{news[0].title}</h3>
         {/* HEAD POST CONTENT */}
-        <p className="new-line fs-5">{subContent() + " ......"}</p>
+        <p className="new-line fs-6">{subContent() + " ......"}</p>
 
         <Link
           href={{
-            pathname: `/${news[news.length - 1].category.name.toLowerCase()}/${
-              news[news.length - 1].slug
-            }`,
+            pathname: `/${news[0].category.name.toLowerCase()}/${news[0].slug}`,
           }}
         >
           <a className="btn btn-primary">Read More</a>

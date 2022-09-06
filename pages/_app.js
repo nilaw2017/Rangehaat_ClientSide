@@ -9,6 +9,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
+        <title>Rangehaat : The New Name For investigative Journalism</title>
         <meta charset="UTF-8" />
         <meta
           name="keywords"

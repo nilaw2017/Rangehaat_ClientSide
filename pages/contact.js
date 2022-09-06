@@ -17,7 +17,7 @@ export default function Contact() {
           <h5 className="text-primary">.com</h5>
         </div>
         <h5>Kalanki, Kathmandu</h5>
-        <h5>981-3604129</h5>
+        <h5>9864153709</h5>
         <br></br>
         <h4>Email:</h4>
         <h5>rangehaatmedia@gmail.com</h5>
