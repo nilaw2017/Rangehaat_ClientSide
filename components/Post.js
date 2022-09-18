@@ -59,18 +59,18 @@ export default function Post({ query }) {
   const compressedURL = process.env.HOST_URL + router.asPath;
   return (
     <>
-      <Head>
+      {/* <Head>
         <title>{`${news.title} - Rangehaat`}</title>
-        {/* <meta property="og:title" content={news.title} /> */}
+        <meta property="og:title" content={news.title} />
         <meta name="description" content={news.description} />
-        {/* FACEBOOK META SHARE */}
+        FACEBOOK META SHARE
         <meta data-rh="true" property="og:title" content={news.title} />
         <meta property="og:url" content={compressedURL} />
         <meta property="og:type" content="article" />
         <meta property="og:description" content={news.description} />
         <meta property="og:image" content={news.image.url} />
         <meta property="fb:app_id" content="554848223043305" />
-      </Head>
+      </Head> */}
       <section>
         <div className="row mt-5">
           <div className="col-lg-8 col-12">

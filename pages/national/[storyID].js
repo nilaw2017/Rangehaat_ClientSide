@@ -32,13 +32,16 @@ const storyID = () => {
   return (
     <>
       <Head>
-        {/* <meta arh-rh="true" property="og:title" content={metaData.title} /> */}
-        <meta
+        <meta arh-rh="true" property="og:title" content={metaData.title} />
+        {/* <meta
           arh-rh="true"
           property="og:title"
           content="Working with hard coded title"
+        /> */}
+        <meta
+          property="og:url"
+          content={process.env.HOST_URL + router.asPath}
         />
-
         <meta property="og:type" content="article" />
         <meta property="og:description" content={metaData.description} />
         <meta property="fb:app_id" content="55484223043305" />
