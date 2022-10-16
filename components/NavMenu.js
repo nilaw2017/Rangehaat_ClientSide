@@ -35,10 +35,10 @@ const NavMenu = () => {
             role="tab"
             aria-selected="false"
           >
-            <Link href="/technology" title="technology">
+            <Link href="/national" title="national">
               <a className="d-lg-flex d-block align-items-center">
-                <i className="fa-solid fa-display fa-lg ms-2 me-2 "></i>
-                <b className=" d-block">Technology</b>
+                <i className="fa-solid fa-landmark fa-lg ms-2 me-2 "></i>
+                <b className=" d-block">National</b>
               </a>
             </Link>
           </li>
@@ -59,10 +59,10 @@ const NavMenu = () => {
             role="tab"
             aria-selected="false"
           >
-            <Link href="/national" title="national">
+            <Link href="/international" title="international">
               <a className="d-lg-flex d-block align-items-center">
-                <i className="fa-solid fa-landmark fa-lg ms-2 me-2 "></i>
-                <b className=" d-block">National</b>
+                <i className="fa-solid fa-earth-africa fa-lg ms-2 me-2 "></i>
+                <b className=" d-block">International</b>
               </a>
             </Link>
           </li>
@@ -71,10 +71,10 @@ const NavMenu = () => {
             role="tab"
             aria-selected="false"
           >
-            <Link href="/international" title="international">
+            <Link href="/technology" title="technology">
               <a className="d-lg-flex d-block align-items-center">
-                <i className="fa-solid fa-earth-africa fa-lg ms-2 me-2 "></i>
-                <b className=" d-block">International</b>
+                <i className="fa-solid fa-display fa-lg ms-2 me-2 "></i>
+                <b className=" d-block">Technology</b>
               </a>
             </Link>
           </li>
